@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>Sir PhotoBooth</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -14,12 +14,11 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
     </head>
-    <body onload="showDivs()" >
+    <body onload="init()" >
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
         <header class="header">
             <div class="logo-name">
                 <img src="img/logoimg.png" alt="Funky Photobooth" class="logo-name" >
@@ -28,13 +27,13 @@
             <br>
             <div class="menu">
                 <div class="ui-g-2 item">
-                    <span class= "select" style="padding-left: 20%" onclick="home()">Home</span>
+                    <span class= "select" style="padding-left: 20%" onclick="select(0)">Home</span>
                 </div>
                 <div class="ui-g-2 item">
-                    <span class= "select" style="padding-left: 10%">Despre noi</span>
+                    <span class= "select" style="padding-left: 10%" onclick="select(1)">Despre noi</span>
                 </div>
                 <div class="dropdown ui-g-2 select ">
-                    <span class="item" style=" padding-left: 30%">Galerie </span>
+                    <span class="item" style=" padding-left: 30%" onclick="select(2)">Galerie </span>
                     <div class="dropdown-content">
                         <p class="subitem">Nunti</p>
                         <p class="subitem">Aniversari</p>
@@ -43,23 +42,23 @@
                     </div>
                 </div>
                 <div class="dropdown ui-g-2 select">
-                    <span class="item" style=" padding-left: 30%">Servicii</span>
+                    <span class="item" style=" padding-left: 30%" onclick="select(3)">Servicii</span>
                     <div class="dropdown-content">
                         <p class="subitem">Cabina Foto</p>
                         <p class="subitem">Photo Corner</p>
                     </div>
                 </div>
                 <div class="ui-g-2 item">
-                    <span class= "select" style="padding-left: 30%">Pachete </span>
+                    <span class= "select" style="padding-left: 30%" onclick="select(4)">Pachete </span>
                 </div>
                 <div class="ui-g-2 item">
-                    <span class= "select" style="padding-left: 20%">Contact</span>
+                    <span class= "select" style="padding-left: 20%" onclick="select(5)">Contact</span>
                 </div>
             </div>
         </header>
         <br>
 
-        <div class="home">
+        <div class="home menu-item">
 
             <div class="center">
                 <img class="mySlides fade" src="img/slide-7.jpg">
@@ -68,38 +67,175 @@
                 <div class="w3-center w3-display-bottommiddle" style="width:100%">
                     <div class="w3-left" style="padding-left: 3%; font-size: xx-large" onclick="prevSlide()">&#10094;</div>
                     <div class="w3-right" style="padding-right: 3%; font-size: xx-large" onclick="nextSlide()">&#10095;</div>
-                    <span class="w3-badge demo w3-border" onclick="setSlide(0)"></span>
-                    <span class="w3-badge demo w3-border" onclick="setSlide(1)"></span>
-                    <span class="w3-badge demo w3-border" onclick="setSlide(2)"></span>
+                    <span class="w3-badge dots w3-border" onclick="setSlide(0)"></span>
+                    <span class="w3-badge dots w3-border" onclick="setSlide(1)"></span>
+                    <span class="w3-badge dots w3-border" onclick="setSlide(2)"></span>
                 </div>
             </div>
-
         </div>
+        <div class="menu-item about">
+            <p style="font-size: xx-large; font-weight: bold; font-family: 'Book Antiqua'">Despre noi</p>
+            <p>&emsp; Sir Photobooth a pornit din dorinta de a oferi clientilor o experienta unica, nu doar servicii.
+            Oferim calitate, diversitate si implicare, pentru ca fiecare eveniment sa fie unul memorabil.
+                Suntem o echipa de oameni tineri, pasionati si pusi pe fapte mari.</p>
 
-        <div class ="pachete ">
+            <p>&emsp;De ce noi? Pentru ca aducem zambete si garantam distractia invitatilor.</p>
 
-            <div class="ui-g-4">
+            <p>&emsp;Cabina foto deschisa si photo corner-ul sunt doua dintre serviciile pe care le oferim in prezent.
+            Pe viitor dorim sa ne extindem si sa adaugam in oferta noastra si alte servicii din domeniul
+                organizarii de evenimente.</p>
+
+            <p>&emsp;Ne simtim onorati ca putem lua parte la evenimente importante din viata clientilor nostri si de
+            fiecare data ne dorim sa oferim o experienta unica. Ne respectam clientii si tratam fiecare eveniment
+                cu profesionalism. </p>
+            <p>&emsp;Suntem deschisi si incercam sa punem in practica chiar si cele mai traznite idei.</p>
+            <hr>
+
+            <section>
+                <p>"Singura modalitate prin care poti face lucruri extraordinare este sa iubesti ceea ce faci"</p>
+                <p><span style="float: right"> Steve Jobs</span></p>
+                <br>
+            </section>
+        </div>
+        <div class="menu-item gallery"></div>
+        <div class="menu-item services"></div>
+        <div class="pachete menu-item">
+            <header class = "pachete-header center">
+                Pachete Photobooth
+            </header>
+            <div class="ui-g-4 pachet">
                 <div class="pachet-header">
                     Pachet Simplu
                 </div>
                 <div class="pachet-content">
-
+                    <br>
+                    <span>4 ore/eveniment </span>
+                    <hr class="line">
+                    <span>Fotografii nelimitate</span>
+                    <hr class="line">
+                    <span>Printuri nelimitate</span>
+                    <hr class="line">
+                    <span>Duplicate poze nelimitate </span>
+                    <hr class="line">
+                    <span> 1-4 cadre/fotografie</span>
+                    <hr class="line">
+                    <span>Poze printate in format 5x15 (semn de carte)</span>
+                    <hr class="line">
+                    <span>Fundal la alegere</span>
+                    <hr class="line">
+                    <span> Monitor touchscreen & liveview </span>
+                    <hr class="line">
+                    <span> Design fotografie standard </span>
+                    <hr class="line">
+                    <span> 40 accesorii haioase</span>
+                    <hr class="line">
+                    <span> 1 operator specializat </span>
+                    <hr class="line">
+                    <span> Cadou 30 de props cu mesaje haioase</span>
+                    <br>
                 </div>
             </div>
 
-            <div class="ui-g-4">
+            <div class="ui-g-4 pachet">
                 <div class="pachet-header">
                     Pachet Gold
                 </div>
+                <div class="pachet-content">
+                    <br>
+                    <span> 8 ore/eveniment </span>
+                    <hr class="line">
+                    <span> Fotografii nelimitate </span>
+                    <hr class="line">
+                    <span> Printuri nelimitate </span>
+                    <hr class="line">
+                    <span> Duplicate poza nelimitate</span>
+                    <hr class="line">
+                    <span> 1-4 cadre/fotografie </span>
+                    <hr class="line">
+                    <span> Poze printate in format 10x15 cm sau strip (5x15cm)</span>
+                    <hr class="line">
+                    <span> Fundal la alegere</span>
+                    <hr class="line">
+                    <span>Monitor touchscreen & liveview </span>
+                    <hr class="line">
+                    <span>Grafica personalizata fotografie</span>
+                    <hr class="line">
+                    <span> 60 accesorii haioase </span>
+                    <hr class="line">
+                    <span> 50 de propsuri</span>
+                    <hr class="line">
+                    <span>Galerie poze online, cu parola</span>
+                    <hr class="line">
+                    <span> 1-2 operatori specializati</span>
+                    <hr class="line">
+                    <span>Stick USB cu poze</span>
+                    <hr class="line">
+                    <span> Fum greu la dansul mirilor</span>
+                    <hr class="line">
+                    <span> Cadou la alegere magneti de 2 cm x 2cm sau Guestbook</span>
+                    <br>
+                </div>
             </div>
 
-            <div class="ui-g-4">
+            <div class="ui-g-4 pachet">
                 <div class="pachet-header">
                     Pachet Platina
                 </div>
 
+                <div class="pachet-content">
+                    <span>Cabina foto+ Fum greu + DJ</span>
+                    <hr class="line">
+                    <span> Photobooth pe toata durata evenimentului</span>
+                    <hr class="line">
+                    <span> Fotografii digitale si printuri nelimitate</span>
+                    <hr class="line">
+                    <span> Duplicate poze nelimitate</span>
+                    <hr class="line">
+                    <span>1-4 cadre/fotografie</span>
+                    <hr class="line">
+                    <span> Poze printate in format 10x15cm sau strip (semn de carte)</span>
+                    <hr class="line">
+                    <span> Fundal la alegere din cele disponibile</span>
+                    <hr class="line">
+                    <span> Grafica personalizata fotografie (text, culori tematica)</span>
+                    <hr class="line">
+                    <span> 60 de accesorii haioase (masti, ochelari, peruci, palarii)</span>
+                    <hr class="line">
+                    <span> 50 de props cu mesaje ( de genul "I'm still single", "I'm sexy and I know it")</span>
+                    <hr class="line">
+                    <span> Monitor touchscreen & liveview</span>
+                    <hr class="line">
+                    <span> Galerie poze online, cu parola</span>
+                    <hr class="line">
+                    <span> 1-2 operatori specializati, care vor fi prezenti pe durata evenimentului</span>
+                    <hr class="line">
+                    <span> Stick USB cu toate pozele, la sfarsitul evenimentului</span>
+                    <hr class="line">
+                    <span> Magneti de 2 cm x 2 cm</span>
+                    <hr class="line">
+                    <span> Guestbook</span>
+                    <hr class="line">
+                    <span> Cadoul fum greu la dansul mirilor</span>
+                    <hr class="line">
+                    <span>
+                </div>
+
             </div>
 
+        </div>
+        <div class="contact menu-item">
+            <div id="map" style="width: 100%; height: 400px"></div>
+
+            <br>
+            <br>
+
+            <p style="font-size: xx-large">Informatii contact</p>
+            <p>Sir Events SRL</p>
+            <p>Bucuresti</p>
+            <p>Cui: 12345678</p>
+            <p>Nr. Reg. Comert: J44/12342/4116</p>
+            <p>Telefon: 0754.765.432</p>
+            <p>Email: office@sirphotobooth.ro</p>
         </div>
 
 
@@ -119,6 +255,9 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdR1CA_q1WK53-cwx6Zg_Hy6hRV1mvqRs&callback=initMap">
+        </script>
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>

@@ -310,6 +310,7 @@ body{
     display: block;
     width: 80%;
     margin: auto;
+    top: 5%;
 }
 
 .pachet-header{
@@ -320,12 +321,71 @@ body{
     font-size: xx-large;
     font-family: "Baskerville Old Face";
     font-weight: bold;
+    box-shadow: 0px -4px 3px 4px rgba(30,0,0,0.2)
 }
 .pachet-content{
+    background-color: white;
+    padding: 2%;
+    box-shadow: 0px 4px 3px 4px rgba(30,0,0,0.2);
 
 }
 
+.pachet{
+    margin-top: 3%;
+    position: relative;
+}
 
+.pachet-option{
+    padding: 2%;
+    overflow: auto;
+
+}
+
+.line{
+    color: darkred;
+    background-color: darkred;
+}
+
+.pachete-header{
+    color: darkred;
+    font-family: "Book Antiqua";
+    font-weight: 800;
+    font-size: -webkit-xxx-large;
+    margin: auto;
+}
+.menu-item{
+    display: none;
+}
+
+.about{
+    padding: 2%;
+    padding-left: 5%;
+    background-image: url("../img/bg.jpg");
+    font-family: 'Blackadder ITC';
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.gallery{
+
+}
+
+.services{
+
+}
+
+.contact{
+    padding: 2%;
+    background-image: url("../img/bg.jpg");
+    font-family: Castellar ;
+    font-size: large;
+    font-weight: bold;
+}
+
+section{
+    padding: 3%;
+    background-color: rgba(33,33,33,0.3);
+}
 
 
 
