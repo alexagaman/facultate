@@ -1,8 +1,5 @@
 ind = 0;
 id = null;
-showSlides = true;
-
-
 
 function init() {
     select(0);
@@ -31,10 +28,7 @@ function home() {
     showDivs();
 }
 
-function contact() {
-}
-
-function select(choice) {
+function select(choice, subchoice = 0) {
     var items =  document.getElementsByClassName("menu-item");
     if(choice >= 0 && choice<items.length){
         clearTimeout(id);
@@ -47,21 +41,8 @@ function select(choice) {
             }
         }
 
-        switch (choice){
-            case 0:
-                home();
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                contact();
-                break;
+        if(choice === 0){
+            home();
         }
     }
 }
