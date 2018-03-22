@@ -105,12 +105,11 @@ textarea {
 
 .menu{
     background: transparent;
-    min-height: 50px;
+    min-height: 55px;
     min-width: 200px;
     margin: auto;
     padding-left: 1%;
     width: 90%;
-    overflow: auto;
 }
 
 .logo-name{
@@ -211,9 +210,17 @@ textarea {
     text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
 }
 
-
+.about-title{
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: 'Book Antiqua'
+}
 
 @media only screen and (max-width: 600px) {
+    .logo-name{
+        width: 110px;
+        height: 58px;
+    }
     .item {
         font-size: 1px;
         font-weight: 100;
@@ -225,7 +232,70 @@ textarea {
     .menu{
         padding: 0%;
         width: 100%;
+        /*overflow: hidden;*/
     }
+
+    .w3-center{
+        padding-left: auto;
+        margin: auto;
+    }
+
+    .about{
+        font-size: large !important;
+    }
+
+    .about-title{
+        font-size: large;
+    }
+
+    .dropdown-content{
+        min-width: 50px;
+    }
+
+    .subitem{
+        font-size: x-small;
+    }
+
+    .pachete{
+        width: 95% !important;
+        top: 2.5% !important;
+    }
+
+    .pachet-header{
+        font-size: large !important;
+        padding: 2%;
+        padding-left: 10%;
+    }
+
+    .pachet-content{
+        font-size: small;
+        overflow-wrap: break-word;
+    }
+
+    .contact-title{
+        font-size: large !important;
+    }
+
+    .contact{
+        font-size: small !important;
+    }
+
+    .arrows{
+        font-size: large !important;
+    }
+
+    .dots{
+
+        height: 8px !important;
+        width: 8px !important;
+    }
+
+    /*.menu div:not(:first-child) {display: none;}*/
+    /*.menu div.icon {*/
+        /*float: right;*/
+        /*display: block;*/
+    /*}*/
+
 }
 
 @media only screen and (max-width: 1250px) {
@@ -237,6 +307,10 @@ textarea {
 @media only screen and (max-width: 1000px) {
     .item {
         font-size: medium;
+    }
+
+    .mySlides{
+        padding-left: 1%;
     }
 }
 
@@ -251,7 +325,7 @@ textarea {
 
 .mySlides {
     display:none;
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
     animation-duration: 1s;
     animation-iteration-count: 1;
@@ -356,6 +430,7 @@ body{
     font-weight: bold;
     box-shadow: 0px -4px 3px 4px rgba(30,0,0,0.2)
 }
+
 .pachet-content{
     background-color: white;
     padding: 2%;
@@ -386,6 +461,7 @@ body{
     font-size: xx-large;
     margin: auto;
 }
+
 .menu-item{
     display: none;
 }
@@ -415,6 +491,15 @@ body{
     font-weight: bold;
 }
 
+.contact-title{
+    font-size: xx-large;
+}
+
+.arrows{
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: xx-large
+}
 section{
     padding: 3%;
     background-color: rgba(33,33,33,0.3);
