@@ -150,11 +150,9 @@ textarea {
     color: #ff9999;
 }
 
-
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
 
 .box-set,
 .box {
@@ -216,103 +214,6 @@ textarea {
     font-family: 'Book Antiqua'
 }
 
-@media only screen and (max-width: 600px) {
-    .logo-name{
-        width: 110px;
-        height: 58px;
-    }
-    .item {
-        font-size: 1px;
-        font-weight: 100;
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 0px black;
-        max-width: 16.6667%;
-        width: max-content;
-        padding: 0.5em !important;
-    }
-    .menu{
-        padding: 0%;
-        width: 100%;
-        /*overflow: hidden;*/
-    }
-
-    .w3-center{
-        padding-left: auto;
-        margin: auto;
-    }
-
-    .about{
-        font-size: large !important;
-    }
-
-    .about-title{
-        font-size: large;
-    }
-
-    .dropdown-content{
-        min-width: 50px;
-    }
-
-    .subitem{
-        font-size: x-small;
-    }
-
-    .pachete{
-        width: 95% !important;
-        top: 2.5% !important;
-    }
-
-    .pachet-header{
-        font-size: large !important;
-        padding: 2%;
-        padding-left: 10%;
-    }
-
-    .pachet-content{
-        font-size: small;
-        overflow-wrap: break-word;
-    }
-
-    .contact-title{
-        font-size: large !important;
-    }
-
-    .contact{
-        font-size: small !important;
-    }
-
-    .arrows{
-        font-size: large !important;
-    }
-
-    .dots{
-
-        height: 8px !important;
-        width: 8px !important;
-    }
-
-    /*.menu div:not(:first-child) {display: none;}*/
-    /*.menu div.icon {*/
-        /*float: right;*/
-        /*display: block;*/
-    /*}*/
-
-}
-
-@media only screen and (max-width: 1250px) {
-    .item {
-        font-size: large;
-    }
-}
-
-@media only screen and (max-width: 1000px) {
-    .item {
-        font-size: medium;
-    }
-
-    .mySlides{
-        padding-left: 1%;
-    }
-}
 
 .subitem:hover{
     cursor: pointer;
@@ -349,19 +250,6 @@ body{
     opacity: 0.8;
 }
 
-@keyframes bounceIn {
-    0% {
-        transform: scale(0.7);
-        opacity: 0;
-    }
-    70% {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-    }
-}
 
 @keyframes slideIn {
     0% {
@@ -391,20 +279,6 @@ body{
     }
 }
 
-
-@-webkit-keyframes bounceIn {
-    0% {
-        transform: scale(0.7);
-        opacity: 0;
-    }
-    70% {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-    }
-}
 
 .fade{-webkit-animation:slideIn 3s;animation: slideIn 3s; z-index: 0;}
 
@@ -500,13 +374,156 @@ body{
     padding-right: 2%;
     font-size: xx-large
 }
+
 section{
     padding: 3%;
     background-color: rgba(33,33,33,0.3);
 }
 
+.login-item{
+    float: right;
+    width: 7%;
+    color: black;
+    font-weight: bold;
+    background-color: rgba(255,255,255,0.5);
+    margin-top: 0.2%;
+    padding: 0.2%;
+    line-height: 100%;
+    text-align: center;
+}
+
+.login-item:hover{
+    cursor: pointer;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.login{
+
+}
+
+label{
+    color: #ff9999;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-weight: bold;
+    font-size: large;
+}
+
+button{
+    color: black;
+    text-shadow: -1px 0 hotpink, 0 1px hotpink, 1px 0 hotpink, 0 -1px hotpink;
+    border-radius: 10px;
+    border-width: thin;
+    padding: 0.4rem;
+    font-weight: bold;
+    font-size: large;
+    background-color: #b3d4fc;
+    box-shadow: 2px 1px 0px 1px rgba(30,0,0,0.2)
+}
+
+input{
+    border-radius: 7px;
+}
 
 
+
+@media only screen and (max-width: 600px) {
+    .logo-name{
+        width: 110px;
+        height: 58px;
+    }
+    .item {
+        font-size: 1px;
+        font-weight: 100;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 0px black;
+        max-width: 16.6667%;
+        width: max-content;
+        padding: 0.5em !important;
+    }
+    .menu{
+        padding: 0%;
+        width: 100%;
+        /*overflow: hidden;*/
+    }
+
+    .w3-center{
+        padding-left: auto;
+        margin: auto;
+    }
+
+    .about{
+        font-size: large !important;
+    }
+
+    .about-title{
+        font-size: large;
+    }
+
+    .dropdown-content{
+        min-width: 50px;
+    }
+
+    .subitem{
+        font-size: x-small;
+    }
+
+    .pachete{
+        width: 95% !important;
+        top: 2.5% !important;
+    }
+
+    .pachet-header{
+        font-size: large !important;
+        padding: 2%;
+        padding-left: 10%;
+    }
+
+    .pachet-content{
+        font-size: small;
+        overflow-wrap: break-word;
+    }
+
+    .contact-title{
+        font-size: large !important;
+    }
+
+    .contact{
+        font-size: small !important;
+    }
+
+    .arrows{
+        font-size: large !important;
+    }
+
+    .dots{
+
+        height: 8px !important;
+        width: 8px !important;
+    }
+
+    /*.menu div:not(:first-child) {display: none;}*/
+    /*.menu div.icon {*/
+    /*float: right;*/
+    /*display: block;*/
+    /*}*/
+
+}
+
+@media only screen and (max-width: 1250px) {
+    .item {
+        font-size: large;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .item {
+        font-size: medium;
+    }
+
+    .mySlides{
+        padding-left: 1%;
+    }
+}
 
 
 

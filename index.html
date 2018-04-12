@@ -20,6 +20,16 @@
         <![endif]-->
 
         <header class="header">
+            <div class="login">
+                <div class="login-item">
+                    <span onclick="select(6)">Login</span>
+                </div>
+                <div class="login-item">
+                    <span onclick="select(7)">Register</span>
+                </div>
+            </div>
+            <br>
+            <br>
             <div class="logo-name">
                 <img src="img/logoimg.png" alt="Funky Photobooth" class="logo-name" >
             </div>
@@ -217,7 +227,6 @@
                     <hr class="line">
                     <span> Cadoul fum greu la dansul mirilor</span>
                     <hr class="line">
-                    <span>
                 </div>
 
             </div>
@@ -235,11 +244,34 @@
             <p>Telefon: 0754.765.432</p>
             <p>Email: office@sirphotobooth.ro</p>
         </div>
+        <div class="menu-item signin center">
+            <form >
+                <label for="username" class="center"> Username: </label>
+                <input type="text" class="center" name="username" id="username"><br>
 
+                <label for="parola" class="center"> Parola:</label>
+                <input type="text" class="center" name="parola" id="parola">
+                <br>
+                <button type="submit" class="center"> Login </button>
+            </form>
 
+        </div>
 
+        <div class="menu-item register">
+            <form >
+                <label for="username2" class="center"> Username: </label>
+                <input type="text" class="center" name="username" id="username2"><br>
 
+                <label for="parola2" class="center"> Parola:</label>
+                <input type="text" class="center" name="parola" id="parola2">
+                <br>
+                <label for="parolac" class="center"> Confirma parola:</label>
+                <input type="text" class="center" name="parola" id="parolac">
 
+                <br>
+                <button type="submit" class="center"> Inregistreaza </button>
+            </form>
+        </div>
 
 
 
