@@ -28,8 +28,9 @@ function home() {
     showDivs();
 }
 
-function select(choice, subchoice = 0) {
+function select(choice, subchoice = -1) {
     var items =  document.getElementsByClassName("menu-item");
+    var item;
     if(choice >= 0 && choice<items.length){
         clearTimeout(id);
         for(index =0; index< items.length; index++){
@@ -38,11 +39,25 @@ function select(choice, subchoice = 0) {
             }
             else{
                 items[index].style.display = "block";
+                item = items[index];
             }
         }
 
         if(choice === 0){
             home();
+        }
+        console.log(item, subchoice);
+        if(subchoice >= 0 && item !== undefined){
+            let subitems = item.getElementsByClassName("menu-subitem");
+            console.log(subchoice);
+            for(index =0; index< subitems.length; index++){
+                if(index !== subchoice){
+                    subitems[index].style.display = "none";
+                }
+                else{
+                    subitems[index].style.display = "block";
+                }
+            }
         }
     }
 }

@@ -425,6 +425,14 @@ input{
     border-radius: 7px;
 }
 
+.cabina{
+    padding: 2%;
+    padding-left: 5%;
+    background-image: url("../img/bg.jpg");
+    font-family: "Droid Sans";
+    font-size: x-large;
+}
+
 
 
 @media only screen and (max-width: 600px) {
