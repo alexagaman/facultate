@@ -7,6 +7,9 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
 
         <link rel="manifest" href="site.webmanifest">
         <link rel="apple-touch-icon" href="img/logo.png">
@@ -19,8 +22,9 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
+
         <header class="header">
-            <div class="login">
+            <div class="login" id="login-box">
                 <div class="login-item">
                     <span onclick="select(6)">Login</span>
                 </div>
@@ -28,13 +32,22 @@
                     <span onclick="select(7)">Register</span>
                 </div>
             </div>
+            <div class="logout" id="logout-box">
+                <div class="login-item">
+                    <span onclick="logout()">Logout</span>
+                </div>
+                <div class="login-item">
+                    <span id="user"></span>
+                </div>
+            </div>
             <br>
+
             <br>
-            <div class="logo-name">
+            <div class="logo-name" onmouseenter="timeMouse('logo')" onmouseleave="stopTimeMouse('logo')">
                 <img src="img/logoimg.png" alt="Funky Photobooth" class="logo-name" >
             </div>
             <br>
-            <div class="menu">
+            <div class="menu" onmouseenter="timeMouse('meniu')" onmouseleave="stopTimeMouse('meniu')">
                 <div class="ui-g-2 item">
                     <span class= "select" style="padding-left: 15%" onclick="select(0)">Home</span>
                 </div>
@@ -66,13 +79,13 @@
             </div>
         </header>
         <br>
-
         <div class="home menu-item">
 
-            <div class="center" style="position: relative">
-                <img class="mySlides fade center" src="img/slide-7.jpg">
-                <img class="mySlides fade center" src="img/slide-8.jpg">
-                <img class="mySlides fade center" src="img/slide-9.jpg">
+            <div class="center" style="position: relative" onmouseenter="timeMouse('slide-show')"
+                 onmouseleave="stopTimeMouse('slide-show')">
+                <img class="mySlides fade center"  alt='slide' src="img/slide-7.jpg">
+                <img class="mySlides fade center" alt='slide' src="img/slide-8.jpg">
+                <img class="mySlides fade center" alt='slide' src="img/slide-9.jpg">
                 <div class="w3-center w3-display-bottommiddle" style="width:100%">
                     <div class="w3-left arrows" onclick="prevSlide()">&#10094;</div>
                     <div class="w3-right arrows" onclick="nextSlide()">&#10095;</div>
@@ -81,9 +94,20 @@
                     <span class="w3-badge dots" onclick="setSlide(2)"></span>
                 </div>
             </div>
+            <canvas class="center" style="float: left"  id="canvas" width="400" height="300"
+                    onmouseenter="timeMouse('grafic')" onmouseleave="stopTimeMouse('grafic')">
+            </canvas>
+            <br>
+            <div id="mousetop" style="float: left">
+
+            </div>
+            <div id="history" class="center" onmouseenter="timeMouse('istoric')" onmouseleave="stopTimeMouse('istoric')">
+
+            </div>
 
         </div>
         <div class="menu-item about">
+            <div onmouseenter="timeMouse('despre-noi')" onmouseleave="stopTimeMouse('despre-noi')">
             <p class="about-title">Despre noi</p>
             <p>&emsp; Sir Photobooth a pornit din dorinta de a oferi clientilor o experienta unica, nu doar servicii.
             Oferim calitate, diversitate si implicare, pentru ca fiecare eveniment sa fie unul memorabil.
@@ -100,8 +124,8 @@
                 cu profesionalism. </p>
             <p>&emsp;Suntem deschisi si incercam sa punem in practica chiar si cele mai traznite idei.</p>
             <hr>
-
-            <section>
+            </div>
+            <section onmouseenter="timeMouse('citat')" onmouseleave="stopTimeMouse('citat')">
                 <p>"Singura modalitate prin care poti face lucruri extraordinare este sa iubesti ceea ce faci"</p>
                 <p><span style="float: right"> Steve Jobs</span></p>
                 <br>
@@ -109,20 +133,34 @@
         </div>
         <div class="menu-item gallery">
             <div class="menu-subitem">
-                nunti
             </div>
             <div class="menu-subitem">
-                aniversari
             </div>
             <div class="menu-subitem">
-                botezuri
             </div>
             <div class="menu-subitem">
-                petreceri
+            </div>
+            <br>
+            <div style="position: relative; float: bottom">
+                <form id="uploadimage" style="background-image: url('img/bg.jpg')">
+                    <br>
+                    <label class="center">Select Your Image</label><br/>
+                    <input class="center" type="file" name="file" id="file" required />
+                    <select name="type" class="center">
+                        <option value="nunti">Nunti</option>
+                        <option value="petreceri">Petreceri</option>
+                        <option value="aniversari">Aniversari</option>
+                        <option value="botezuri">Botezuri</option>
+                    </select>
+                    <br>
+                    <input class="center submit" type="submit" value="Upload" />
+                    <br>
+                </form>
             </div>
         </div>
         <div class="menu-item services">
-            <div class="menu-subitem cabina">
+            <div class="menu-subitem cabina" onmouseenter="timeMouse('informatii-cabina')"
+                 onmouseleave="stopTimeMouse('informatii-cabina')">
                 <p><b>Cabina foto</b></p>
                 <p>Mr. Photobooth nu este o cabina clasica, inchisa, ci deschisa, toata distractia este “la vedere”. Aceasta este compusa dintr-un fundal, iar in fata lui, la 1m - 1,5 m este montat soldatul (aparat foto, monitor touchscreen, imprimanta).Design-ul soldatului este modern, luminat (culorile se pot schimba), menit sa starneasca curiozitatea celor prezenti.
                 </p>
@@ -148,7 +186,8 @@
                 Transport & instalare</li>
                 </ul>
             </div>
-            <div class="menu-subitem cabina">
+            <div class="menu-subitem cabina" onmouseenter="timeMouse('informatii-corner')"
+                 onmouseleave="stopTimeMouse('informatii-corner')">
                 <p> <b>Ce este un Photo Corner? </b></p>
                 <p>Photo Corner-ul reprezinta un decor compus din fundal, masa, scaune, fotolii si diverse obiecte decorative. Poate fi folosit la orice tip de eveniment pentru a realiza cele mai inedite fotografii. Avantajul photo corner-ului este ca pozele pot fi realizate si de fotograful angajat de dumeavoastra, dar si de invitati.
                 </p>
@@ -280,42 +319,54 @@
 
         </div>
         <div class="contact menu-item">
-            <div id="map" style="width: 100%; height: 400px"></div>
+            <div id="map" style="width: 100%; height: 400px" onmouseenter="timeMouse('harta')" onmouseleave="stopTimeMouse('harta')"></div>
             <br>
             <br>
-            <p class="contact-title">Informatii contact</p>
-            <p>Sir Events SRL</p>
-            <p>Bucuresti</p>
-            <p>Cui: 12345678</p>
-            <p>Nr. Reg. Comert: J44/12342/4116</p>
-            <p>Telefon: 0754.765.432</p>
-            <p>Email: office@sirphotobooth.ro</p>
+            <div onmouseenter="timeMouse('contact')" onmouseleave="stopTimeMouse('contact')">
+                <p class="contact-title">Informatii contact</p>
+                <p>Sir Events SRL</p>
+                <p>Bucuresti</p>
+                <p>Cui: 12345678</p>
+                <p>Nr. Reg. Comert: J44/12342/4116</p>
+                <p>Telefon: 0754.765.432</p>
+                <p>Email: office@sirphotobooth.ro</p>
+            </div>
         </div>
         <div class="menu-item signin center">
-            <form >
+            <script>
+                $(function(){$('#login-form').submit(function (event) {
+                    event.preventDefault();
+                    submitForm();
+                })});
+            </script>
+            <form method="post" id="login-form" onmouseenter="timeMouse('formular_login')" onmouseleave="stopTimeMouse('formular_login')">
                 <label for="username" class="center"> Username: </label>
                 <input type="text" class="center" name="username" id="username"><br>
 
                 <label for="parola" class="center"> Parola:</label>
-                <input type="text" class="center" name="parola" id="parola">
+                <input type="password" class="center" name="password" id="parola">
                 <br>
-                <button type="submit" class="center"> Login </button>
+                <button type="submit" class="center" id="login_button" name="login_button"> Login </button>
             </form>
 
         </div>
-
         <div class="menu-item register">
-            <form >
+            <script>
+                $(function(){$('#signup-form').submit(function (event) {
+                    event.preventDefault();
+                    signup();
+                })});
+            </script>
+            <form id="signup-form" onmouseenter="timeMouse('formular-register')" onmouseleave="stopTimeMouse('formular-register')">
                 <label for="username2" class="center"> Username: </label>
                 <input type="text" class="center" name="username" id="username2"><br>
 
                 <label for="parola2" class="center"> Parola:</label>
-                <input type="text" class="center" name="parola" id="parola2">
+                <input type="password" class="center" name="parola" id="parola2">
                 <br>
                 <label for="parolac" class="center"> Confirma parola:</label>
-                <input type="text" class="center" name="parola" id="parolac">
+                <input type="password" class="center" name="parolac" id="parolac">
                 <br>
-
                 <label for="email" class="center"> Email:</label>
                 <input type="text" class="center" name="email" id="email">
                 <br>
@@ -324,7 +375,19 @@
             </form>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <div class="chat" id="chat" hidden>
+            <header class="item" onclick="showChat()">Chat</header>
+            <div id="chat-content" style="height: 10%" hidden>
+                <div id="messages">
+
+                </div>
+
+                <textarea id="chat-message" style='float:bottom; float: left; margin: 2%; margin-right: 0' ></textarea>
+                <button style="float: bottom ; margin: 2%" onclick="sendMessage()"> Send </button>
+
+            </div>
+        </div>
+
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>

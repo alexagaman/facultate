@@ -402,6 +402,10 @@ section{
 
 }
 
+.logout{
+    display: none;
+}
+
 label{
     color: #ff9999;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -425,12 +429,98 @@ input{
     border-radius: 7px;
 }
 
+img {
+    width: 100%;
+    height: auto;
+}
+
+header{
+    font-size: large;
+    font-family: Algerian;
+    font-weight: bold;
+}
+
+li{
+    font-weight: bold;
+    font-family: Arial;
+    font-size: large;
+    color: darkslateblue;
+}
+
+.chat{
+    position: fixed;
+    min-width: 300px;
+    max-width: 400px;
+    z-index: 3;
+    width: 40%;
+    bottom: 0;
+    right: 0;
+    background: #cceeee;
+    box-shadow: 2px 1px 0px 1px rgba(30,0,0,0.2);
+    padding: 5px;
+    text-align: center;
+    border-color: #000022;
+    border-style: solid;
+
+}
+
 .cabina{
     padding: 2%;
     padding-left: 5%;
     background-image: url("../img/bg.jpg");
     font-family: "Droid Sans";
     font-size: x-large;
+}
+
+.gallery-image{
+    width: 33% !important;
+    border: 2px solid cyan;
+    border-radius: 6px;
+    padding: 5px;
+    max-height:400px;
+    box-shadow: 2px 1px 0px 1px rgba(0, 255, 255, 0.44);
+}
+
+.chat-container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    max-height: 400px;
+    overflow: scroll;
+}
+
+/* Darker chat container */
+.chat-darker {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+#chat-content{
+    background: white;
+}
+
+#messages{
+    max-height: 330px;
+    overflow: scroll;
+}
+
+/* Clear floats */
+.chat-container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.chat-time-right {
+    float: right;
+    color: #aaa;
+}
+
+/* Style time text */
+.chat-time-left {
+    float: left;
+    color: #999;
 }
 
 
